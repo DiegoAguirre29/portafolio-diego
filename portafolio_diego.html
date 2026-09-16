@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diego Aguirre | Portafolio Profesional</title>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- AOS CSS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        dark: {
+                            900: '#0f172a', // Slate 900
+                            800: '#1e293b', // Slate 800
+                            700: '#334155', // Slate 700
+                        },
+                        accent: {
+                            500: '#3b82f6', // Blue 500
+                            400: '#60a5fa', // Blue 400
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Custom CSS for specific elegant touches -->
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3b82f6; 
+        }
+
+        /* Subtle gradient text */
+        .text-gradient {
+            background: linear-gradient(to right, #60a5fa, #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Glassmorphism card effect */
+        .glass-card {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .skill-bar-fill {
+            transition: width 1.5s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-dark-900 text-gray-200 font-sans antialiased overflow-x-hidden selection:bg-accent-500 selection:text-white">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 glass-card border-b border-dark-700/50 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="flex justify-between items-center h-20">
+                <a href="#" class="text-2xl font-bold tracking-tighter text-white">
+                    Diego Aguirre<span class="text-accent-500">.</span>
+                </a>
+                <div class="hidden md:flex space-x-8 text-sm font-semibold text-gray-300">
+                    <a href="#about" class="hover:text-accent-400 transition-colors">Sobre Mí</a>
+                    <a href="#skills" class="hover:text-accent-400 transition-colors">Habilidades</a>
+                    <a href="#projects" class="hover:text-accent-400 transition-colors">Proyectos</a>
+                    <a href="#education" class="hover:text-accent-400 transition-colors">Educación</a>
+                    <a href="#contact" class="hover:text-accent-400 transition-colors">Contacto</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center">
+                    <button class="text-gray-300 hover:text-white focus:outline-none text-2xl">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <section id="about" class="relative min-h-screen flex items-center pt-20 pb-12 overflow-hidden">
+        <!-- Background decorative blobs -->
+        <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-500/10 rounded-full blur-3xl -z-10"></div>
+        <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/10 rounded-full blur-3xl -z-10"></div>
+
+        <div class="max-w-7xl mx-auto px-6 md:px-12 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <div class="inline-block px-4 py-2 rounded-full bg-dark-800 border border-dark-700 text-accent-400 text-sm font-semibold mb-6">
+                        <i class="fas fa-rocket mr-2"></i> Buscando Prácticas Pre-Profesionales
+                    </div>
+                    <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight mb-6">
+                        Hola, soy <br> <span class="text-gradient">Diego</span>
+                    </h1>
+                    <h2 class="text-xl md:text-2xl text-gray-300 font-light mb-6">
+                        Estudiante de <strong class="font-semibold text-white">Ingeniería de Sistemas de Información</strong> (8vo ciclo)
+                    </h2>
+                    <p class="text-gray-400 text-lg mb-8 leading-relaxed max-w-lg">
+                        Perfil analítico orientado a la resolución de problemas estructurados. Perteneciente al <strong class="text-gray-200">décimo superior académico</strong>. Apasionado por la optimización de procesos y arquitecturas empresariales, con especial interés en desarrollarme en áreas de <strong class="text-accent-400">sistemas o soporte SAP</strong>.
+                    </p>
+                    <div class="flex flex-wrap gap-4">
+                        <a href="#contact" class="px-8 py-3 rounded-lg bg-accent-500 hover:bg-accent-400 text-white font-semibold transition-all duration-300 shadow-[0_0_15px_rgba(59,130,246,0.4)] hover:-translate-y-1">
+                            Contactar
+                        </a>
+                        <a href="#projects" class="px-8 py-3 rounded-lg glass-card hover:bg-dark-700 text-white font-semibold transition-all duration-300 hover:-translate-y-1">
+                            Ver Proyectos
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Graphic representation (Code/Data conceptual) -->
+                <div class="hidden lg:flex justify-center" data-aos="fade-left" data-aos-duration="1200" data-aos-delay="200">
+                    <div class="relative w-full max-w-md h-96 glass-card rounded-2xl p-6 border-t border-l border-white/10 shadow-2xl">
+                        <div class="flex space-x-2 mb-4">
+                            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+                            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+                        </div>
+                        <div class="font-mono text-sm text-gray-400 space-y-2">
+                            <p><span class="text-purple-400">const</span> <span class="text-blue-400">developer</span> = {</p>
+                            <p class="ml-4">name: <span class="text-green-400">'Diego Aguirre'</span>,</p>
+                            <p class="ml-4">role: <span class="text-green-400">'Systems Engineering Student'</span>,</p>
+                            <p class="ml-4">academicStanding: <span class="text-green-400">'Top 10%'</span>,</p>
+                            <p class="ml-4">interests: [<span class="text-green-400">'SAP'</span>, <span class="text-green-400">'Architecture'</span>, <span class="text-green-400">'Networks'</span>],</p>
+                            <p class="ml-4">solveProblems: <span class="text-purple-400">true</span>,</p>
+                            <p class="ml-4">analyzeData: <span class="text-purple-400">function</span>() {</p>
+                            <p class="ml-8 text-gray-500">// Returns actionable insights</p>
+                            <p class="ml-8 text-accent-400">return optimizeBusiness();</p>
+                            <p class="ml-4">}</p>
+                            <p>}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="py-24 bg-dark-800/50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Habilidades Técnicas</h2>
+                <div class="w-20 h-1 bg-accent-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400">Herramientas y tecnologías en las que me desenvuelvo.</p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Skill: Angular -->
+                <div class="glass-card p-6 rounded-xl text-center group hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fab fa-angular text-5xl text-red-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-semibold text-white">Angular</h3>
+                </div>
+                <!-- Skill: Spring Boot -->
+                <div class="glass-card p-6 rounded-xl text-center group hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-leaf text-5xl text-green-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-semibold text-white">Spring Boot</h3>
+                </div>
+                <!-- Skill: PostgreSQL -->
+                <div class="glass-card p-6 rounded-xl text-center group hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-database text-5xl text-blue-400 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-semibold text-white">PostgreSQL</h3>
+                </div>
+                <!-- Skill: Cisco / Redes -->
+                <div class="glass-card p-6 rounded-xl text-center group hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="400">
+                    <i class="fas fa-network-wired text-5xl text-gray-300 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-semibold text-white">Redes / Cisco</h3>
+                </div>
+                <!-- Skill: Google Colab -->
+                <div class="glass-card p-6 rounded-xl text-center group hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="500">
+                    <i class="fab fa-google text-5xl text-yellow-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-semibold text-white">Google Colab</h3>
+                </div>
+                <!-- Skill: Trello -->
+                <div class="glass-card p-6 rounded-xl text-center group hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2" data-aos="zoom-in" data-aos-delay="600">
+                    <i class="fab fa-trello text-5xl text-blue-500 mb-4 group-hover:scale-110 transition-transform"></i>
+                    <h3 class="font-semibold text-white">Trello</h3>
+                </div>
+            </div>
+            
+            <!-- Contextual Note -->
+            <div class="mt-12 text-center" data-aos="fade-up" data-aos-delay="700">
+                <p class="text-gray-400 text-sm max-w-2xl mx-auto">
+                    * Además de mis capacidades de desarrollo y bases de datos, poseo un fuerte entendimiento de la lógica de negocio y arquitectura de sistemas, competencias fundamentales para la <strong class="text-gray-200">gestión y soporte de módulos SAP</strong>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">Mis Proyectos</h2>
+                <div class="w-20 h-1 bg-accent-500 mx-auto rounded-full"></div>
+                <p class="mt-4 text-gray-400">Trabajos académicos y desarrollos que demuestran mi capacidad técnica y analítica.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Project 1: EcoHabit -->
+                <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-3 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] flex flex-col" data-aos="fade-up" data-aos-delay="100">
+                    <div class="h-48 bg-gradient-to-br from-green-900 to-dark-800 relative flex items-center justify-center overflow-hidden">
+                        <i class="fas fa-leaf text-7xl text-green-500/20 absolute transform group-hover:scale-150 transition-transform duration-700"></i>
+                        <h3 class="text-2xl font-bold text-white relative z-10 tracking-wider">EcoHabit</h3>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-xl font-bold text-white">App Full-Stack</h4>
+                                <span class="text-xs font-semibold px-2 py-1 bg-dark-700 rounded text-accent-400">Angular / Spring</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Aplicación web integral. Destaca por una sólida estructura de frontend en Angular, consumiendo servicios REST desde un backend en Spring Boot con PostgreSQL.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 border-t border-dark-700/50 pt-4">
+                            <span class="text-xs bg-dark-900 px-2 py-1 rounded-md text-gray-400 border border-dark-700"><i class="fas fa-code mr-1"></i> Frontend Structuring</span>
+                            <span class="text-xs bg-dark-900 px-2 py-1 rounded-md text-gray-400 border border-dark-700"><i class="fas fa-server mr-1"></i> API REST</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: Golden Pig -->
+                <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-3 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] flex flex-col" data-aos="fade-up" data-aos-delay="200">
+                    <div class="h-48 bg-gradient-to-br from-yellow-900 to-dark-800 relative flex items-center justify-center overflow-hidden">
+                        <i class="fas fa-chart-pie text-7xl text-yellow-500/20 absolute transform group-hover:scale-150 transition-transform duration-700"></i>
+                        <h3 class="text-2xl font-bold text-white relative z-10 tracking-wider">Golden Pig</h3>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-xl font-bold text-white">Análisis de Negocio</h4>
+                                <span class="text-xs font-semibold px-2 py-1 bg-dark-700 rounded text-yellow-400">Consultoría</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Proyecto de arquitectura de negocio y seguridad de la información. Análisis organizacional detallado, identificando puntos de mejora y proponiendo soluciones estructuradas alineadas a TI.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 border-t border-dark-700/50 pt-4">
+                            <span class="text-xs bg-dark-900 px-2 py-1 rounded-md text-gray-400 border border-dark-700"><i class="fas fa-sitemap mr-1"></i> Arquitectura</span>
+                            <span class="text-xs bg-dark-900 px-2 py-1 rounded-md text-gray-400 border border-dark-700"><i class="fas fa-shield-alt mr-1"></i> InfoSec</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Simulación de Redes -->
+                <div class="glass-card rounded-2xl overflow-hidden group hover:-translate-y-3 transition-all duration-500 hover:shadow-[0_10px_30px_rgba(59,130,246,0.15)] flex flex-col" data-aos="fade-up" data-aos-delay="300">
+                    <div class="h-48 bg-gradient-to-br from-blue-900 to-dark-800 relative flex items-center justify-center overflow-hidden">
+                        <i class="fas fa-network-wired text-7xl text-blue-500/20 absolute transform group-hover:scale-150 transition-transform duration-700"></i>
+                        <h3 class="text-2xl font-bold text-white relative z-10 tracking-wider text-center px-4">Simulación de Redes</h3>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-3">
+                                <h4 class="text-xl font-bold text-white">Infraestructura</h4>
+                                <span class="text-xs font-semibold px-2 py-1 bg-dark-700 rounded text-blue-400">Cisco</span>
+                            </div>
+                            <p class="text-gray-400 text-sm mb-4 leading-relaxed">
+                                Diseño, configuración y optimización de topologías de red complejas. Implementación de protocolos de enrutamiento y políticas de seguridad perimetral básica.
+                            </p>
+                        </div>
+                        <div class="flex flex-wrap gap-2 mt-4 border-t border-dark-700/50 pt-4">
+                            <span class="text-xs bg-dark-900 px-2 py-1 rounded-md text-gray-400 border border-dark-700"><i class="fas fa-route mr-1"></i> Routing</span>
+                            <span class="text-xs bg-dark-900 px-2 py-1 rounded-md text-gray-400 border border-dark-700"><i class="fas fa-project-diagram mr-1"></i> Topologías</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="education" class="py-24 bg-dark-800/50">
+        <div class="max-w-7xl mx-auto px-6 md:px-12">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Education side -->
+                <div data-aos="fade-right">
+                    <h2 class="text-3xl font-bold text-white mb-8 flex items-center">
+                        <i class="fas fa-graduation-cap text-accent-500 mr-4"></i> Formación Académica
+                    </h2>
+                    <div class="relative pl-8 border-l-2 border-dark-700 space-y-8">
+                        <div class="relative">
+                            <div class="absolute -left-[41px] top-1 w-5 h-5 bg-accent-500 rounded-full border-4 border-dark-900"></div>
+                            <h3 class="text-xl font-bold text-white">Ingeniería de Sistemas de Información</h3>
+                            <h4 class="text-accent-400 font-semibold mb-2">Universidad Peruana de Ciencias Aplicadas (UPC)</h4>
+                            <p class="text-gray-400 text-sm mb-1"><i class="far fa-calendar-alt mr-2"></i> Actualmente en 8vo Ciclo</p>
+                            <p class="text-gray-400 text-sm mt-3 leading-relaxed">
+                                Formación integral orientada a alinear la tecnología con los objetivos de negocio. Sólidas bases en desarrollo de software, gestión de datos, arquitectura empresarial y análisis de sistemas.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Achievements side -->
+                <div data-aos="fade-left">
+                    <h2 class="text-3xl font-bold text-white mb-8 flex items-center">
+                        <i class="fas fa-trophy text-accent-500 mr-4"></i> Logros y Habilidades Blandas
+                    </h2>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Card 1 -->
+                        <div class="glass-card p-6 rounded-xl border border-dark-700 flex flex-col justify-center">
+                            <i class="fas fa-star text-3xl text-yellow-500 mb-4"></i>
+                            <h3 class="text-lg font-bold text-white mb-2">Décimo Superior</h3>
+                            <p class="text-gray-400 text-sm">
+                                Reconocimiento a la excelencia académica, demostrando responsabilidad, constancia y alta capacidad de aprendizaje.
+                            </p>
+                        </div>
+                        
+                        <!-- Card 2 -->
+                        <div class="glass-card p-6 rounded-xl border border-dark-700 flex flex-col justify-center">
+                            <i class="fas fa-comments text-3xl text-blue-400 mb-4"></i>
+                            <h3 class="text-lg font-bold text-white mb-2">Investigación y Debate</h3>
+                            <p class="text-gray-400 text-sm">
+                                Experiencia en estructuración de argumentos, pensamiento crítico y análisis profundo para la resolución de conflictos y planteamiento de soluciones.
+                            </p>
+                        </div>
+                        
+                        <!-- Card 3 (Full width) -->
+                        <div class="glass-card p-6 rounded-xl border border-dark-700 sm:col-span-2 flex items-center">
+                            <i class="fas fa-cogs text-4xl text-accent-400 mr-6"></i>
+                            <div>
+                                <h3 class="text-lg font-bold text-white mb-1">Enfoque Analítico (Problem Solving)</h3>
+                                <p class="text-gray-400 text-sm">
+                                    Capacidad para descomponer problemas complejos, identificar la raíz causal y proponer estrategias eficientes. Habilidad clave para soporte y diagnóstico en sistemas ERP/SAP.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="bg-dark-900 border-t border-dark-700/50 pt-20 pb-10">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold text-white mb-6" data-aos="fade-up">¿Listo para conectar?</h2>
+            <p class="text-gray-400 mb-10 text-lg" data-aos="fade-up" data-aos-delay="100">
+                Estoy buscando oportunidades de prácticas pre-profesionales donde pueda aportar mi capacidad analítica y seguir aprendiendo sobre arquitecturas empresariales y sistemas SAP.
+            </p>
+            
+            <div class="flex justify-center space-x-6 mb-12" data-aos="fade-up" data-aos-delay="200">
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/diegoaguirre192" class="w-14 h-14 rounded-full glass-card flex items-center justify-center text-white hover:text-accent-400 hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2 group">
+                    <i class="fab fa-linkedin-in text-2xl group-hover:scale-110 transition-transform"></i>
+                </a>
+                <!-- GitHub -->
+                <a href="https://github.com/DiegoAguirre29" class="w-14 h-14 rounded-full glass-card flex items-center justify-center text-white hover:text-gray-300 hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2 group">
+                    <i class="fab fa-github text-2xl group-hover:scale-110 transition-transform"></i>
+                </a>
+                <!-- Email -->
+                <a href="mailto:diegoaguirre192@gmail.com" class="w-14 h-14 rounded-full glass-card flex items-center justify-center text-white hover:text-red-400 hover:bg-dark-700 transition-all duration-300 hover:-translate-y-2 group" title="correo@ejemplo.com">
+                    <i class="fas fa-envelope text-2xl group-hover:scale-110 transition-transform"></i>
+                </a>
+            </div>
+            
+            <div class="w-full h-px bg-dark-700/50 mb-8"></div>
+            
+            <p class="text-gray-500 text-sm">
+                &copy; 2023 Diego. Diseñado y construido con dedicación. <br class="md:hidden">Estudiante de Ingeniería de Sistemas de Información.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        /* Initialize AOS (Animate on Scroll) */
+        AOS.init({
+            once: true, // whether animation should happen only once - while scrolling down
+            offset: 100, // offset (in px) from the original trigger point
+            duration: 800, // values from 0 to 3000, with step 50ms
+            easing: 'ease-out-cubic', // default easing for AOS animations
+        });
+
+        /* Navbar scroll effect */
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 20) {
+                navbar.classList.add('shadow-lg');
+                navbar.classList.replace('border-dark-700/50', 'border-accent-500/20');
+            } else {
+                navbar.classList.remove('shadow-lg');
+                navbar.classList.replace('border-accent-500/20', 'border-dark-700/50');
+            }
+        });
+    </script>
+</body>
+</html>
